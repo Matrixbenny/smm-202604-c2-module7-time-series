@@ -199,6 +199,9 @@ cython_debug/
 # Lab outputs created when you run the notebooks
 outputs/*
 !outputs/.gitkeep
+# Our group shares and submits the prediction and metric tables (small CSV/JSON files)
+!outputs/*.csv
+!outputs/*.json
 
 v1/
 v2/

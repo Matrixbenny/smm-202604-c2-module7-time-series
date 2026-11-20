@@ -14,7 +14,12 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = PROJECT_ROOT / "data"
 OUTPUT_DIR = PROJECT_ROOT / "outputs"
 
-TARGET_TICKER = "GOOGL"
+# Our group forecasts JPMorgan Chase (JPM), the largest US bank. It is not the
+# notebooks' stock (NVDA/GOOGL), it has a long clean history on Yahoo Finance,
+# and a bank reacts to interest rates and to the financial sector, which gives
+# us predictors with an economic reason to matter (see FIN and US10Y below).
+TARGET_TICKER = "JPM"
+# TARGET_TICKER = "GOOGL"
 # TARGET_TICKER = "NVDA"
 
 # ---------------------------------------------------------------------------
@@ -43,13 +48,20 @@ PREDICTOR_TICKERS = {
     "USD": "DX-Y.NYB",
     "BRENT": "BZ=F",
     "GOLD": "GC=F",
+    # Added by our group for JPM: the financial sector fund. JPM is a bank, so
+    # the banking sector is the stock's closest peer group, in the same way
+    # that TECH is the peer group of a technology stock. Its features are built
+    # in tslab/team.py and checked with check_no_lookahead.
+    "FIN": "XLF",
 }
 
 # The snapshot is a fixed period so that everyone in the class works on identical
 # numbers. END is exclusive (Yahoo Finance convention), so the last trading
 # day in the snapshot is specified.
 SNAPSHOT_START = "2015-01-01"
-SNAPSHOT_END = "2026-11-10"
+# Our group downloaded its data on 20 November 2026. END is exclusive, so the
+# last trading day in our snapshot is 19 November 2026.
+SNAPSHOT_END = "2026-11-20"
 
 # Predictors are forward filled for at most this many days. This covers days
 # when one market was open and another was closed (public holidays).

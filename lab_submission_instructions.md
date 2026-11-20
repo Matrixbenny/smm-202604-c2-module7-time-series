@@ -12,9 +12,9 @@
 
 | **Details**                                                                                        | **Comment** |
 |:---------------------------------------------------------------------------------------------------|:------------|
-| **Student ID:**                                                                                    |             |
-| **Name:**                                                                                          |             |
-| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** |             |
+| **Student ID:**                                                                                    | 155499      |
+| **Name:**                                                                                          | Benvictor Mwangi |
+| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** | I chose JPM as our stock and justified it, and added the financial-sector fund (XLF) as a predictor because JPM is a bank (`tslab/config.py`, `tslab/team.py`). I downloaded and quality-checked the data, plotted the candlestick charts, tested the closing price and the log return for stationarity with ADF and KPSS, and wrote the look-ahead test for our new features (`lab_1_data_and_stationarity.ipynb`, `tests/test_team.py`). I also coordinated the team, combined everyone's work into this submission and wrote the verdict. I learned that ADF and KPSS have opposite null hypotheses, so a conclusion is only convincing when both agree, and that JPM moving with its sector on the same day (correlation 0.91) says almost nothing about the next day's return (correlation about −0.09). |
 
 **Member 2**
 
@@ -47,6 +47,41 @@
 | **Student ID:**                                                                                    |             |
 | **Name:**                                                                                          |             |
 | **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** |             |
+
+**Member 6**
+
+| **Details**                                                                                        | **Comment** |
+|:---------------------------------------------------------------------------------------------------|:------------|
+| **Student ID:**                                                                                    |             |
+| **Name:**                                                                                          |             |
+| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** |             |
+
+## Our Submission
+
+| **Key**                    | **Value** |
+|:---------------------------|:----------|
+| **Stock forecast**         | JPMorgan Chase & Co. (JPM), New York Stock Exchange |
+| **Why this stock**         | See `lab_1_data_and_stationarity.ipynb`, Step 2 |
+| **Data source**            | Yahoo Finance, via `python download_data.py --target JPM` |
+| **Date of download**       | 20 November 2026 (data from 2 January 2015 to 19 November 2026) |
+| **Predictors**             | The seven provided (S&P 500, technology fund, VIX, 10-year yield, US dollar, Brent, gold) **plus the financial-sector fund XLF**, added because JPM is a bank (`tslab/team.py`) |
+| **Tier attempted**         | Advanced |
+
+**Our notebooks, in running order** (each runs from top to bottom after a kernel restart):
+
+| Notebook | Answers |
+|:--|:--|
+| `lab_1_data_and_stationarity.ipynb` | Data quality, candlestick charts, ADF and KPSS, look-ahead test |
+| `lab_2_classical_models.ipynb` | Naive, drift, exponential smoothing, ARIMA and ARMAX, with walk-forward and Diebold-Mariano |
+| `lab_3_machine_learning_models.ipynb` | Ridge and gradient boosting, the main result table, feature ablation, permutation importance |
+| `lab_4_uncertainty_and_horizons.ipynb` | Quantile ranges and coverage, skill at 1/5/21/63 days, `forecast_basic.csv` and `forecast_intermediate.csv` |
+| `lab_5_neural_networks.ipynb` | LSTM and GRU, tuning on validation data, stability across seeds |
+| `lab_6_backtest_and_powerbi_export.ipynb` | Back-test with 0/5/10 bp costs, `forecast_advanced.csv`, files for Power BI |
+| `powerbi/JPM_forecast.pbix` (+ `.pdf`) | The Power BI dashboard (Basic, Intermediate and Advanced pages) |
+
+## Written Verdict for the Portfolio Manager
+
+*(To be written by the team after Labs 3, 4 and 6 are final: about half a page, plain language.)*
 
 ## Scenario
 
