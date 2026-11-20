@@ -4,7 +4,7 @@
 
 ## Student Details
 
-**Name of the team on GitHub Classroom:**
+**Name of the team on GitHub Classroom:** smm-202604-c2 (Group C2) — repo: https://github.com/Matrixbenny/smm-202604-c2-module7-time-series
 
 **Team Member Contributions:**
 
