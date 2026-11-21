@@ -28,9 +28,9 @@
 
 | **Details**                                                                                        | **Comment** |
 |:---------------------------------------------------------------------------------------------------|:------------|
-| **Student ID:**                                                                                    |             |
-| **Name:**                                                                                          |             |
-| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** |             |
+| **Student ID:**                                                                                    |           154683 | 
+| **Name:**                                                                                    |  Whitney Karimi           |
+| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** | I built the Ridge regression and gradient boosting models for JPM with our 50 predictors, including the new financial-sector group, and tested them walk-forward on 1,789 unseen days. I ran the look-ahead test and showed how a centred average leaks the future, tuned both models on the first 1,000 days only, and produced the main results table against the naive forecast with Diebold-Mariano tests, plus a combined table with Member 2’s classical models. I also ran the feature ablation, permutation importance and the next-day forecast. I learned that neither model beat the naive forecast, and that Ridge’s 53.6% directional accuracy came from JPM’s upward drift, because it predicted “up” on 99% of day. My branch https://github.com/Matrixbenny/smm-202604-c2-module7-time-series/tree/feature/member3-machine-learning            |
 
 **Member 4**
 
