@@ -18,11 +18,11 @@
 
 **Member 2**
 
-| **Details**                                                                                        | **Comment** |
-|:---------------------------------------------------------------------------------------------------|:------------|
-| **Student ID:**                                                                                    |             |
-| **Name:**                                                                                          |             |
-| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** |             |
+| **Details**                                                                                        | **Comment**  |
+|:---------------------------------------------------------------------------------------------------|:-------------|
+| **Student ID:**                                                                                    | 169389       |
+| **Name:**                                                                                          | Juliet Mumbi |
+| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** | I developed and evaluated naive, drift, simple exponential smoothing, ARIMA, ARMA(1,0) and ARMAX models to forecast JPM stock returns. I used walk-forward validation to ensure that the models were trained only on past data and included the FIN predictor in the ARMAX model, applying a one-day lag to avoid look-ahead bias. I evaluated the models using RMSE, MAE, out-of-sample R², directional accuracy and Diebold-Mariano tests. I also performed Ljung–Box residual diagnostics and examined forecast behaviour over a 63-day horizon. Through this work, I learned how classical forecasting models work, how to evaluate their performance fairly, and why more complex models do not necessarily produce better forecasts than a simple naive model.             |
 
 **Member 3**
 
