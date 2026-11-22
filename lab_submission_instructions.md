@@ -14,7 +14,7 @@
 |:---------------------------------------------------------------------------------------------------|:------------|
 | **Student ID:**                                                                                    | 155499      |
 | **Name:**                                                                                          | Benvictor Mwangi |
-| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** | I chose JPM as our stock and justified it, and added the financial-sector fund (XLF) as a predictor because JPM is a bank (`tslab/config.py`, `tslab/team.py`). I downloaded and quality-checked the data, plotted the candlestick charts, tested the closing price and the log return for stationarity with ADF and KPSS, and wrote the look-ahead test for our new features (`lab_1_data_and_stationarity.ipynb`, `tests/test_team.py`). I also coordinated the team, combined everyone's work into this submission and wrote the verdict. I learned that ADF and KPSS have opposite null hypotheses, so a conclusion is only convincing when both agree, and that JPM moving with its sector on the same day (correlation 0.91) says almost nothing about the next day's return (correlation about −0.09). |
+| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** | I chose JPM as our stock and justified it, and added the financial-sector fund (XLF) as a predictor because JPM is a bank (`tslab/config.py`, `tslab/team.py`). I downloaded and quality-checked the data, plotted the candlestick charts, tested the closing price and the log return for stationarity with ADF and KPSS, and wrote the look-ahead test for our new features (`lab_1_data_and_stationarity.ipynb`, `tests/test_team.py`). I also coordinated the branch strategy and the sequence in which the branches merge. I learned that ADF and KPSS have opposite null hypotheses, so a conclusion is only convincing when both agree, and that JPM moving with its sector on the same day (correlation 0.91) says almost nothing about the next day's return (correlation about −0.09). |
 
 **Member 2**
 
@@ -63,7 +63,7 @@
 | **Stock forecast**         | JPMorgan Chase & Co. (JPM), New York Stock Exchange |
 | **Why this stock**         | See `lab_1_data_and_stationarity.ipynb`, Step 2 |
 | **Data source**            | Yahoo Finance, via `python download_data.py --target JPM` |
-| **Date of download**       | 20 November 2026 (data from 2 January 2015 to 19 November 2026) |
+| **Date of download**       | 20 November 2026 (the JPM snapshot on this branch runs from 2 January 2015 to 29 October 2026; confirm the real download date before submitting) |
 | **Predictors**             | The seven provided (S&P 500, technology fund, VIX, 10-year yield, US dollar, Brent, gold) **plus the financial-sector fund XLF**, added because JPM is a bank (`tslab/team.py`) |
 | **Tier attempted**         | Advanced |
 
