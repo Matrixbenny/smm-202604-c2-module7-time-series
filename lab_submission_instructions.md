@@ -36,9 +36,9 @@
 
 | **Details**                                                                                        | **Comment** |
 |:---------------------------------------------------------------------------------------------------|:------------|
-| **Student ID:**                                                                                    |             |
-| **Name:**                                                                                          |             |
-| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** |             |
+| **Student ID:**                                                                                    |        129086     |
+| **Name:**                                                                                          |       Faith Njung'e      |
+| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** | I estimated the 10% to 90% forecast range with quantile gradient boosting and measured its coverage on 1,789 test days: 79.8% overall, close to the 80% target, but only 68.8% in 2020. I compared the models with the naive forecast at horizons of 1, 5, 21 and 63 days, with a Diebold-Mariano test at each horizon, and found that no model beat the naive forecast at any horizon. I produced the 63-day forecast on real NYSE trading days (data/forecast_basic.csv and data/forecast_intermediate.csv) and the metrics table that Power BI uses. I learned that a range that is right on average can still fail in a crisis, and that it becomes more overconfident at longer horizons (66.6% coverage at 63 days). My branch https://github.com/Matrixbenny/smm-202604-c2-module7-time-series/tree/feature/member4-uncertainty-horizons |
 
 **Member 5**
 
