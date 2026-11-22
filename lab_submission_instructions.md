@@ -18,19 +18,19 @@
 
 **Member 2**
 
-| **Details**                                                                                        | **Comment** |
-|:---------------------------------------------------------------------------------------------------|:------------|
-| **Student ID:**                                                                                    |             |
-| **Name:**                                                                                          |             |
-| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** |             |
+| **Details**                                                                                        | **Comment**  |
+|:---------------------------------------------------------------------------------------------------|:-------------|
+| **Student ID:**                                                                                    | 169389       |
+| **Name:**                                                                                          | Juliet Mumbi |
+| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** | I developed and evaluated naive, drift, simple exponential smoothing, ARIMA, ARMA(1,0) and ARMAX models to forecast JPM stock returns. I used walk-forward validation to ensure that the models were trained only on past data and included the FIN predictor in the ARMAX model, applying a one-day lag to avoid look-ahead bias. I evaluated the models using RMSE, MAE, out-of-sample R², directional accuracy and Diebold-Mariano tests. I also performed Ljung–Box residual diagnostics and examined forecast behaviour over a 63-day horizon. Through this work, I learned how classical forecasting models work, how to evaluate their performance fairly, and why more complex models do not necessarily produce better forecasts than a simple naive model.             |
 
 **Member 3**
 
 | **Details**                                                                                        | **Comment** |
 |:---------------------------------------------------------------------------------------------------|:------------|
-| **Student ID:**                                                                                    |             |
-| **Name:**                                                                                          |             |
-| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** |             |
+| **Student ID:**                                                                                    |           154683 | 
+| **Name:**                                                                                    |  Whitney Karimi           |
+| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** | I built the Ridge regression and gradient boosting models for JPM with our 50 predictors, including the new financial-sector group, and tested them walk-forward on 1,789 unseen days. I ran the look-ahead test and showed how a centred average leaks the future, tuned both models on the first 1,000 days only, and produced the main results table against the naive forecast with Diebold-Mariano tests, plus a combined table with Member 2’s classical models. I also ran the feature ablation, permutation importance and the next-day forecast. I learned that neither model beat the naive forecast, and that Ridge’s 53.6% directional accuracy came from JPM’s upward drift, because it predicted “up” on 99% of day. My branch https://github.com/Matrixbenny/smm-202604-c2-module7-time-series/tree/feature/member3-machine-learning            |
 
 **Member 4**
 
