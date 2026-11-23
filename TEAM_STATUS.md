@@ -58,3 +58,29 @@ Nobody should reset or force-push `main` again. Member 1's original tip is recov
    not exist yet.
 6. **Power BI** â€” `powerbi/` is empty.
 7. **Video** â€” not recorded. Must be **<= 4 minutes** (not 10 as in Module 6).
+
+## Reproducibility check (22 Nov)
+
+All four examinable notebooks were re-executed from a clean kernel on `main`:
+`lab_1` 13 cells, `lab_2` 24, `lab_3` 20, `lab_4` 22 - **0 errors each**.
+
+Re-running regenerates the outputs. The **core metrics reproduce** to 13 significant figures
+(price RMSE, MAE, out-of-sample R2, directional accuracy - e.g. Ridge 2.9724529084 vs
+2.9724529084). Two things drift slightly:
+
+| Item | Committed | Re-run | Changes a conclusion? |
+| :--- | :--- | :--- | :--- |
+| ARIMA DM p | 0.2259 | 0.1746 | No - both far above 0.05 |
+| Gradient boosting DM p | 0.0783 | 0.1402 | No - both above 0.05 |
+| ARMAX DM p | 0.3004 | 0.3048 | No |
+| Ridge DM p | 0.8140 | 0.8140 | No - identical |
+| Drift DM p | 0.6809 | 0.6809 | No - identical |
+
+Cause: the Diebold-Mariano statistic depends on the long-run variance estimate, which is sensitive
+to floating-point accumulation order, and the neural networks depend on framework-level randomness
+beyond the seed. **Every headline number in the written verdict holds in both runs**: no model beats
+the naive forecast, Ridge p = 0.81, Drift p = 0.68, LSTM p = 0.0002, coverage 79.8% at 1 day and
+66.6% at 63 days, and the 63-day forecast of 344.19 with range 296.17-390.33.
+
+**Do not commit regenerated `outputs/` or `data/forecast_*.csv` unless you also update the verdict**,
+or the document and the files will disagree.
