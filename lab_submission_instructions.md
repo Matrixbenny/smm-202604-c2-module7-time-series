@@ -52,9 +52,9 @@
 
 | **Details**                                                                                        | **Comment** |
 |:---------------------------------------------------------------------------------------------------|:------------|
-| **Student ID:**                                                                                    |             |
-| **Name:**                                                                                          |             |
-| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** |             |
+| **Student ID:**                                                                                    | 167317      |
+| **Name:**                                                                                          | Nicole Mokua |
+| **What part of the lab did you personally contribute to,** <br>**and what did you learn from it?** | I combined every member's walk-forward predictions into one master table against the naive forecast and added the neural network rows to the metrics file. I chose the best model by lowest RMSE before looking at any profits, then back-tested Drift and Ridge with 0, 5 and 10 basis points of trading cost against buy and hold (`lab_6_backtest_and_powerbi_export.ipynb`). I built `forecast_advanced.csv`, `backtest_curves.csv` and `powerbi_basic_chart.csv`, the three-page Power BI dashboard (`powerbi/JPM_forecast.pbix` and `.pdf`), coordinated the video and put the final submission together. I learned that Ridge's higher back-test return (20.4% a year against 17.4% for buy and hold) came from being long on 99% of days, so it was almost buy and hold, and that the Diebold-Mariano test, not a profit curve, is the honest measure of forecasting skill. My branch https://github.com/Matrixbenny/smm-202604-c2-module7-time-series/tree/feature/member6-backtest-powerbi |
 
 ## Our Submission
 
@@ -63,7 +63,7 @@
 | **Stock forecast**         | JPMorgan Chase & Co. (JPM), New York Stock Exchange |
 | **Why this stock**         | See `lab_1_data_and_stationarity.ipynb`, Step 2 |
 | **Data source**            | Yahoo Finance, via `python download_data.py --target JPM` |
-| **Date of download**       | 20 November 2026 (the JPM snapshot on this branch runs from 2 January 2015 to 29 October 2026; confirm the real download date before submitting) |
+| **Date of download**       | 20 November 2026 (2,989 trading days, from 2 January 2015 to 19 November 2026) |
 | **Predictors**             | The seven provided (S&P 500, technology fund, VIX, 10-year yield, US dollar, Brent, gold) **plus the financial-sector fund XLF**, added because JPM is a bank (`tslab/team.py`) |
 | **Tier attempted**         | Advanced |
 
@@ -81,7 +81,15 @@
 
 ## Written Verdict for the Portfolio Manager
 
-*(To be written by the team after Labs 3, 4 and 6 are final: about half a page, plain language.)*
+**Does our model beat the naive forecast? No.** Over 1,789 trading days that no model saw (9 October 2019 to 19 November 2026), our best models, Drift and Ridge, had a price error (RMSE) of $2.972, against $2.974 for "tomorrow equals today", a difference of less than one cent. The Diebold-Mariano test gives p = 0.68 and p = 0.81, so the difference is not statistically significant. None of our 10 models (classical, machine learning and neural networks) was significantly better than naive, and the LSTM network was significantly worse (p = 0.0002). Ridge got the direction right on 53.5% of days, but JPM rose on 53.4% of days and Ridge predicted "up" on 99% of them, so that comes from the stock's upward drift, not from skill. Looking further ahead (5, 21 and 63 days), no model beat naive either.
+
+**How we know.** Every forecast was made walk-forward: in 29 blocks of 63 days, each model was trained only on days before the forecast, scalers were fitted on the training rows only, and all settings were chosen using the first 1,000 days (before October 2019). An automatic look-ahead test confirmed that none of our predictors, including the financial-sector fund we added, uses future information.
+
+**How much to trust the 63-day forecast.** The central forecast for 23 February 2027 is $344.19 (+7.5% from the last close of $320.22), with an 80% range of $296.17 to $390.33. In our tests the range contained the real price 79.8% of the time one day ahead, close to the 80% target, but only 66.6% of the time at 63 days and 68.8% in the 2020 crisis. So the range is too narrow at long horizons and in volatile markets. Treat the central line as roughly "no change", and plan for a range at least as wide as the one shown.
+
+**Back-test.** Ridge's long/short rule earned 20.4% a year against 17.4% for buy and hold (19.5% after 10 basis points of costs), but it was long on 99% of days, so this small gain comes from a handful of lucky days. It is not evidence of skill and not a trading recommendation.
+
+**Bottom line.** Our predictors give no reliable edge on JPM's next-day or next-quarter price; use the forecast range for risk planning, not the central line for trading.
 
 ## Scenario
 
