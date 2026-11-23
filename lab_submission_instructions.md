@@ -221,7 +221,7 @@ For all three tiers, submit the link to a short video (not more than 4 minutes) 
 
 | **Key**                | **Value** |
 |:-----------------------|:----------|
-| **Link to the video:** |           |
+| **Link to the video:** | https://drive.google.com/file/d/1m-MkwUkR8BCGyAWsF-NdGQWvk-LjgBFQ/view?usp=sharing |
 
 ---
 
